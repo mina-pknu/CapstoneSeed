@@ -1,0 +1,169 @@
+/* 검색바 스타일 */
+.search-container {
+  margin: 5% 12%;
+  margin-top: 40px;
+  position: relative;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border: #ccc 1px solid;
+  border-radius: 30px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  position: relative;
+  z-index: 3;
+}
+
+.focused{
+  border-bottom: none;
+}
+
+.search-icon {
+  margin-left: 12px;
+  font-size: 18px;
+}
+
+/* 검색창 스타일 */
+.search-bar input[type='text'] {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1em;
+  color: #333;
+  padding: 20px;
+}
+
+/* 검색창 플레이스홀더 스타일 */
+.search-bar input[type='text']::placeholder {
+  color: #888;
+}
+
+/* 취소 버튼 스타일 */
+.search-bar .cancel-button {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.search-bar .cancel-button:hover {
+  color: black;
+  transition: all 0.1s;
+}
+
+.search-history-container {
+  position: absolute;
+  padding: 15px 0px;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  width: 95%;
+  background: white;
+  z-index: 1;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 8px 8px; /* 드롭다운 모서리 둥글게 설정 */
+}
+
+/* 검색 기록 컨테이너 스타일 */
+.search-history {
+  background-color: white;
+  /* border-bottom: 2px solid rgba(0, 0, 0, 0.429); */
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+  z-index: 1; /* 검색바보다 아래에 표시되도록 설정 */
+  max-height: 300px; /* 검색 기록 목록의 최대 높이 설정 */
+  overflow-y: auto; /* 내용이 많을 경우 스크롤 가능하도록 설정 */
+}
+
+/* 검색 기록 항목 스타일 */
+.history-item {
+  display: flex;
+  align-items: center;
+  padding: 15px 25px;
+  cursor: pointer;
+  gap: 15PX;
+}
+
+/* 검색 기록 항목 호버 스타일 */
+.history-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* 검색 기록 돋보기 아이콘 스타일 */
+.history-icon {
+  font-size: 1.2em;
+  color: #888;
+  margin-right: 10px;
+}
+
+/* SearchBar.css */
+.search-container {
+  position: relative;
+}
+
+.search-bar {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* 검색 기록 텍스트 스타일 */
+.history-text {
+  flex: 1;
+  text-align: left;
+  margin-left: 20px;
+  font-weight: 700;
+}
+
+/* 검색 기록 삭제 아이콘 스타일 */
+.history-delete {
+  font-size: 1.2em;
+  color: #888;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* 추천 검색어 스타일 */
+.suggestions-header{
+  font-weight: 700;
+  text-align: left;
+  margin-top: 20px;
+  margin-left: 20px;
+  color: #888888c4;
+}
+
+.recommand-tags{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tag{
+    background-color: #F1F1F1;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333 ;
+}
+
+.tag:hover {
+  background-color: #E0E0E0
+}
+
+/* 반응형 디자인 */
+@media (max-width: 760px) {
+  .search-container{
+    margin: 5% 0%;
+  }
+  .search-bar {
+    width: 100%;
+  }
+}

@@ -1,0 +1,43 @@
+.skeleton-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 350px;
+  flex: 0 1 calc(32% - 1px); /* 한 줄에 3개 배치, 간격 포함 */
+}
+
+.skeleton-image {
+  width: 100%;
+  height: 85%;
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-likes {
+  width: 100%;
+  height: 30px; /* 좋아요 부분의 높이 */
+  background-color: #e0e0e0;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+.skeleton-grid {
+    display: flex;
+    flex-wrap: wrap; /* 줄이 넘어가면 다음 줄에 배치 */
+    justify-content: space-between; /* 아이템 간의 간격을 균등하게 */
+    margin: 20px 10px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}

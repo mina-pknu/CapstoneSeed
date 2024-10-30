@@ -1,0 +1,211 @@
+.item-detail-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item-detail-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.item-detail-container img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.item-detail-container div {
+  margin-bottom: 15px;
+}
+
+.item-detail-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.item-detail-container select,
+.item-detail-container input,
+.item-detail-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.item-detail-container textarea {
+  height: 100px;
+  resize: none;
+}
+
+.item-detail-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.item-detail-container button:hover {
+  background-color: #d0d0d0;
+}
+
+.bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.bubble {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.bubble.selected {
+  background-color: #444;
+  color: white;
+}
+
+.bubble:hover {
+  background-color: #d0d0d0;
+}
+
+.tag-input-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.add-tag-button {
+  padding: 4px 8px; /* 버튼을 더 작게 조정 */
+  background-color: #444;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px; /* 폰트 크기도 작게 조정 */
+  transition: background-color 0.3s ease;
+}
+
+.add-tag-button:hover {
+  background-color: #888;
+}
+
+.tag-input-container input {
+  display: flex;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.bubble-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.bubble {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.bubble.selected {
+  background-color: #444;
+  color: white;
+}
+
+.bubble:hover {
+  background-color: #d0d0d0;
+}
+
+.subcategory-container {
+  margin-top: 15px;
+}
+
+.color-palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.color-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.color-circle.selected {
+  border: 2px solid #000;
+}
+
+/* item-detail-container 클래스 내의 select 요소 스타일링 */
+.item-detail-container select {
+  width: 100%; /* 너비를 100%로 설정 */
+  padding: 12px; /* 여백 추가 */
+  border-radius: 5px; /* 테두리 둥글게 */
+  border: 1px solid #ccc; /* 테두리 색상 */
+  background-color: #f9f9f9; /* 배경색 */
+  font-size: 14px; /* 폰트 크기 */
+  color: #444; /* 텍스트 색상 */
+  appearance: none; /* 기본 콤보 상자 화살표 제거 */
+  cursor: pointer; /* 마우스 커서 스타일 변경 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23444" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>'); /* 사용자 정의 화살표 아이콘 */
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+}
+
+/* 옵션 스타일링 (select 내부의 option 요소) */
+.item-detail-container select option {
+  padding: 10px;
+  background-color: white; /* 옵션 배경색 */
+  color: #444; /* 옵션 텍스트 색상 */
+}
+
+/* 콤보 상자 호버 시 스타일 */
+.item-detail-container select:hover {
+  border-color: #888; /* 호버 시 테두리 색상 변경 */
+  background-color: #f1f1f1; /* 호버 시 배경색 변경 */
+}
+
+/* 콤보 상자 활성화 시 (포커스 되었을 때) 스타일 */
+.item-detail-container select:focus {
+  border-color: #444; /* 포커스 시 테두리 색상 변경 */
+  outline: none; /* 기본 아웃라인 제거 */
+  box-shadow: 0 0 5px rgba(68, 68, 68, 0.3); /* 포커스 시 그림자 추가 */
+}
+
+/* 사용자 정의 화살표 색상 변화 (호버 및 포커스 시) */
+.item-detail-container select:hover,
+.item-detail-container select:focus {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>');
+}

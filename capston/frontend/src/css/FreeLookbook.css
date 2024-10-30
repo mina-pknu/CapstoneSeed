@@ -1,0 +1,166 @@
+/* 상단 배너 스타일 */
+.banner {
+  background-color: #000000;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* 다른 요소 위에 나타나도록 설정 */
+  width: 100%;
+  height: 110px;
+}
+
+.freeLookBook-container{
+  margin-top: 50px;
+  display: flex;
+  height: 100vh; /* 전체 화면을 꽉 채우도록 설정 */
+  overflow-y: auto; /* 수직 스크롤을 가능하게 함 */
+}
+
+.category-item-selecton-container{
+  width: 50%;
+  margin-right: 10px;
+  margin-top: -20px;
+}
+
+.banner h1 {
+  position: absolute;
+  color: white;
+  margin: 0;
+  font-size: 2.2rem;
+  top: 30%;
+  left: 3%;
+  cursor: pointer;
+}
+
+/* title 섹션 스타일 */
+.title {
+  text-align: center; /* 텍스트 가운데 정렬 */
+  margin-top: 30px; /* 상단과의 간격 추가 */
+  margin-bottom: 30px;
+}
+
+.title h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+/* 그리드 캔버스 */
+.canvas-container {
+  position: relative;
+  width: 500px; /* 원하는 너비로 설정 */
+  height: 500px; /* 원하는 높이로 설정 */
+  border: 2px solid black; /* 검은색 테두리 추가 */
+  margin: 0 auto; /* 캔버스를 중앙에 배치 */
+  border-radius: 5px;
+}
+
+/* 아이템 선택 컨테이너 (화면 하단에 표시) */
+.item-selection-container {
+  display: grid; /* 그리드 레이아웃 사용 */
+  grid-template-columns: repeat(4, 1fr); /* 한 줄에 6개 이미지 */
+  gap: 20px; /* 이미지 간 간격 */
+  width: 100%;
+  max-width: 1000px; /* 최대 너비 설정 */
+  margin: 20px auto; /* 중앙 정렬 */
+  padding: 10px;
+  box-sizing: border-box; /* 패딩 포함한 너비 계산 */
+}
+
+/* 아이템 스타일 */
+.item {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 130px;
+}
+
+/* 이미지 스타일 */
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  cursor: pointer;
+}
+
+.category-button {
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  font-size: 18px;
+  padding: 0px;
+  width: 100px;
+}
+
+.category-button.selected-category {
+  font-weight: bold; /* 선택된 카테고리의 텍스트 굵게 */
+  color: black; /* 선택된 카테고리의 텍스트 색상 변경 */
+}
+
+.category-button:hover {
+  color: #444;
+}
+
+.canvas-container img {
+  transition: all 0.2s ease; /* 부드러운 애니메이션 */
+}
+
+/* 삭제 버튼 스타일 */
+.free-delete-button {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 크기 및 회전 핸들러 스타일 */
+.resize-rotate-handle {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: nwse-resize;
+  border-radius: 50%;
+  font-size: 16px;
+}
+/* 
+.button.selected-button {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+} */
+
+.save-button {
+  position: absolute;
+  top: 89%;
+  /* left: 102%; */
+  padding: 7px 10px;
+  width: 70px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #808080;
+}

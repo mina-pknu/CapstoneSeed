@@ -1,0 +1,240 @@
+.lookbook-banner{
+  border-bottom: 2px solid #e0e0e0;
+  background-color: #ffffff;
+  color: black;
+  height: 100px;
+  text-align: center;
+}
+
+.mode-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: transparent; /* 배경색 없음 */
+  color: #ccc; /* 기본 텍스트 색상 */
+  border: none;
+  border-radius: 5px;
+  transition: color 0.3s ease, font-weight 0.3s ease;
+  font-size: 20px;
+}
+
+.mode-button.selected {
+  font-weight: bold; /* 선택된 카테고리의 텍스트 굵게 */
+  color: black; /* 선택된 카테고리의 텍스트 색상 변경 */
+}
+
+.mode-button:hover {
+  background-color: transparent;
+  color: #444; /* 호버 시 텍스트 색상 변경 */
+}
+
+/* 모달 창 스타일 */
+.lookbook-save-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 30px 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 430px;
+  border-radius: 12px;  }
+
+.lookbook-save-modal-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.lookbook-save-modal h3 {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.lookbook-save-modal input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 새로운 모달 스타일 */
+.lookbook-view-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 350px;
+  border-radius: 12px;
+}
+
+.lookbook-view-modal-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.lookbook-view-modal-main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.lookbook-view-modal-items-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.lookbook-view-modal-item-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.situation-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.situation-bubble {
+  padding: 10px 15px;
+  background-color: #f0f0f0;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.situation-bubble.selected {
+  background-color: #444;
+  color: white;
+}
+
+.situation-bubble:hover {
+  background-color: #d0d0d0;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.lookbook-save-modal-button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 70px;
+  height: 40px;
+  display: inline-block;
+}
+
+.lookbook-close-modal-button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 70px;
+  height: 40px;
+  display: inline-block;
+}
+
+.lookbook-save-modal-button:hover {
+  background-color: #808080;
+}
+
+.lookbook-close-modal-button:hover {
+  background-color: #808080;
+}
+
+.lookbook-save-modal-buttons {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  gap: 20px; /* 저장, 취소 버튼들 간 간격 */
+}
+
+.lookbook-modal input,
+.lookbook-modal select {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.lookbook-view-modal-details {
+  display: flex;
+  justify-content: center;
+  gap: 200px; /* 스타일명과 상황 사이의 간격 */
+  margin-bottom: 15px;
+}
+
+.lookbook-delete-button {
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100px;
+  height: 40px;
+}
+
+.lookbook-delete-button:hover {
+  background-color: #808080;
+}
+
+.lookbook-modal-buttons {
+  display: flex;
+  justify-content: center; /* 가로 중앙 정렬 */
+  gap: 20px; /* 버튼들 간 간격 */
+  margin-top: -30px;
+}
+
+.saved-lookbooks-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개 이미지 */
+  gap: 30px 20px; /* 이미지끼리의 간격 위아래, 좌우 */
+  margin: -50px 60px; /* 위아래, 좌우 */
+}
+
+/* 저장된 룩북 이미지 크기 */
+.saved-lookbook {
+  width: 230px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.saved-lookbook img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+}

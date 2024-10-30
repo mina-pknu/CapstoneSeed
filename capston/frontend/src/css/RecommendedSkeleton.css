@@ -1,0 +1,48 @@
+.recommended-skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100% !important;
+  gap: 5px;
+}
+
+.skeleton-recommended-image {
+  flex:1;
+  height: 230px;
+  max-width: 200px;
+  background-color: #7d7d7d;
+  animation: skeleton-loading 1.5s infinite;
+  margin-bottom: 10px;
+}
+
+.dots-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
+}

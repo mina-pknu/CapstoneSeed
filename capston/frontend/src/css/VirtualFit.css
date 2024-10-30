@@ -1,0 +1,213 @@
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
+.app {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.app-header {
+  background-color: #ffffff;
+  color: black;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 0;
+  height: 100px;
+}
+
+.sidebar-container {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 100px; /*구 수정!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+  left: 0;
+  height: calc(100vh - 80px);
+  z-index: 1;
+}
+
+.sidebar {
+  width: 150px;
+  padding: 10px;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.sub-sidebar {
+  width: 200px;
+  padding: 10px;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+#main {
+  flex-grow: 1; /* 메인 영역이 남은 공간을 차지하도록 설정 */
+  margin-left: 350px;
+  padding: 20px;
+  background-color: #fafafa;
+}
+
+#h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#h3 {
+  color: #474747;
+  font-size: 18px;
+  cursor: pointer;
+  margin: 10px 0;
+  padding-bottom: 10px;
+  border-right: 2px solid #0c0c0c;
+}
+
+.selected-option {
+  background-color: #808080; /* 선택된 옵션의 배경 색상을 회색으로 설정 */
+  color: rgb(250, 250, 250);
+}
+
+#ul {
+  list-style-type: none;
+  padding: 10px;
+}
+
+#li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+#li:hover {
+  background-color: #f0f0f0;
+}
+
+.prompt-container {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  width: 80%;
+  padding: 50px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.underlined {
+  border-bottom: 1.5px solid #616161; /* 밑줄 효과 추가 */
+  padding: 2px; /* 밑줄과 텍스트 사이의 간격 */
+  border-radius: 2px;
+}
+
+.button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #0c0c0c; /* 까만 배경 */
+  color: #f0f0f0; /* 흰 글자 */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  margin-right: 10px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 80%; /* 컨테이너 전체 너비를 80%로 제한 */
+  max-width: 1000px; /* 최대 너비를 1200px로 설정 */
+  margin-left: auto; /* 좌우 중앙 정렬을 위해 추가 */
+  margin-right: auto; /* 좌우 중앙 정렬을 위해 추가 */
+}
+
+.image-container img {
+  width: 45%;
+  height: auto;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.navigation-buttons button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  cursor: pointer;
+}
+
+/*-------------------추가한 부분-------------------*/
+.arrow-button {
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+}
+
+.arrow-button:hover {
+  background-color: #dbdbdb;
+}
+
+.save-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin: 0 10px;
+  background-color: #0c0c0c;
+  border-radius: 4px;
+  color: #f0f0f0;
+  cursor: pointer;
+}
+
+.saved-images-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.thumbnail-image {
+  width: 150px;
+  height: auto;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+.thumbnail-wrapper {
+  position: relative;
+}
+
+.image-checkbox {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+}
+
+.edit-button,
+.delete-button {
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 5px 20px;
+  background-color: #dbdbdb;
+  color: #333333;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.edit-button:hover,
+.delete-button:hover {
+  background-color: #b9b9b9;
+}
