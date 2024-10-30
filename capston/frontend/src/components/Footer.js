@@ -14,7 +14,10 @@ const Footer = ({ currentSection }) => {
         }
         onClick={() => navigate("/homepage")}
       >
-        옷장
+        <div id="ai-icon">
+          <img src="./hanger.png" alt="AI Icon" />
+        </div>
+        <div>옷장</div>
       </button>
       <button
         className={
@@ -22,7 +25,10 @@ const Footer = ({ currentSection }) => {
         }
         onClick={() => navigate("/lookbook")}
       >
-        코디맵
+        <div id="ai-icon">
+          <img src="./cloth.png" alt="AI Icon" />
+        </div>
+        <div>코디맵</div>
       </button>
       <button
         className={
@@ -30,7 +36,10 @@ const Footer = ({ currentSection }) => {
         }
         onClick={() => navigate("/virtual-fit")}
       >
-        착용샷
+        <div id="ai-icon">
+          <img src="./ai-icon.png" alt="AI Icon" />
+        </div>
+        <div>가상착용</div>
       </button>
     </div>
   );
