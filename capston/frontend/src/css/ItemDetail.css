@@ -8,10 +8,11 @@
   top: 0%;
   left: 0%; /* 페이지의 왼쪽 끝에 위치 */
   width: 100%; /* 페이지 전체 너비를 차지 */
-  height: 120px; /* 헤더 높이 설정 */
-  background-color: black; /* 검정색 배경 */
-  color: white; /* 흰색 텍스트 */
+  height: 120px;
+  background-color: #ffffff;
+  text-align: center;
   z-index: 100;
+  border-bottom: 2px solid #e0e0e0;
 }
 
 .detail-box {
@@ -26,23 +27,19 @@
 }
 
 /*헤더*/
-.detail-header-title {
-  font-size: 2.2rem;
-  color: white;
-  position: absolute;
-  top: 10%;
-  left: 3%;
-  cursor: pointer;
-}
 
+/*선택 사진*/
 .selected-item {
-  width: 450px;
-  height: 460px;
+  width: 500px;
+  height: 500px;
 }
 
+/* 선택 사진 상세정보 */
 .item-info {
   display: flex;
   flex-direction: column;
+  font-size: 18px;
+  font-weight: 300;
   width: 50%;
   padding: 0 10px;
   /* justify-content: flex-end; */
@@ -65,6 +62,7 @@
   align-items: center;
 }
 
+/* 태그 형식들*/
 .tags {
   margin-left: -5px;
   display: flex;
@@ -78,7 +76,7 @@
   color: #333; /* 태그 글자색 */
   padding: 5px 15px; /* 태그 내부 여백 */
   border-radius: 15px; /* 둥근 모서리 */
-  font-size: 13px; /* 글자 크기 */
+  font-size: 15px; /* 글자 크기 */
 }
 
 .description-textbox {
@@ -122,6 +120,8 @@
   color: #333;
 }
 
+
+/* 코디맵과 착용샷 탭 */
 .tabs-container {
   border: 2px solid #cccccc80;
   margin-top: 80px;
@@ -144,8 +144,8 @@
 
 .tabs button:hover,
 .tabs button.active {
-  border-bottom: 2px #ccc solid;
-  color: black;
+  border-bottom: 2px #70c1cc solid;
+  color: #92DCE5;
 }
 
 .codimap-span {
@@ -242,47 +242,60 @@
   object-fit: cover; /* 이미지가 컨테이너를 채우도록 조정, 왜곡 방지 */
 }
 
-/*좋아요 버튼*/
-.likes-count {
-  display: flex;
-  padding: 10px;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.likes-count span {
-  font-size: 0.8rem;
-  color: #ccc;
-}
-
-.like-button {
-  position: absolute;
-  font-size: 1.5rem;
-  top: 2%;
-  right: 4%;
-}
-
-.like-button:hover {
-  cursor: pointer;
-}
 
 textarea {
+  font-size: 15px;
+  height: 50px;
+  line-height: 1.5;
   resize: none; /* 크기 조정 비활성화 */
 }
 
+/* 설명 저장 버튼 */
 .save-btn-box {
   display: flex;
   justify-content: flex-end;
 }
 
 .des-save-button {
-  margin-top: 5px;
-  background-color: #000000d9;
+  position: relative;
+  overflow: hidden;
+  color: white;
   width: 100%;
-  transition: 0.3s all linear;
+  color: black;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #e0e0e0;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  margin-top: 5px;
 }
+
 .des-save-button:hover {
-  background-color: #00000099;
+  background-color: transparent;
+}
+
+.des-save-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #92DCE5; /* 애니메이션 배경색 */
+  transform: translateX(100%); /* 시작 상태: 왼쪽으로 이동 */
+  transition: transform 0.5s ease; /* 애니메이션 시간과 속도 */
+  z-index: -1; /* 텍스트보다 뒤에 배경이 오도록 설정 */
+}
+
+.des-save-button:hover::before {
+  transform: translateX(0); /* 호버 시 오른쪽으로 슬라이드 */
+}
+
+.des-save-button:hover {
+  color: white; /* 배경색과 대조되는 텍스트 색상 */
 }
 
 /* 또다른 유사한 상품 섹션 */
@@ -319,7 +332,7 @@ textarea {
   width: 200px;
   position: relative;
   display: inline-block;
-  z-index: 0;
+  z-index: 1;
 }
 
 .custom-select::after {
@@ -336,7 +349,7 @@ textarea {
   border: 2px #cccccc80 solid;
   border-radius: 5px;
   position: absolute;
-  margin-top: 10px;
+  margin-top: 5px;
   left: -1%;
   width: 200px;
   padding: 0px;
@@ -357,7 +370,7 @@ textarea {
   font-weight: 300;
 }
 .custom-option button:hover {
-  background-color: rgba(138, 199, 253, 0.418);
+  background-color: #92DCE5;
 }
 .another-Slider {
   margin-top: 25px;
