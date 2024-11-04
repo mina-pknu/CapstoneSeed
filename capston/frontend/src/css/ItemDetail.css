@@ -77,6 +77,7 @@
   padding: 5px 15px; /* 태그 내부 여백 */
   border-radius: 15px; /* 둥근 모서리 */
   font-size: 15px; /* 글자 크기 */
+  font-weight: 500;
 }
 
 .description-textbox {
@@ -120,7 +121,6 @@
   color: #333;
 }
 
-
 /* 코디맵과 착용샷 탭 */
 .tabs-container {
   border: 2px solid #cccccc80;
@@ -142,10 +142,11 @@
   color: black;
 }
 
+/*색상 수정!!!!!!*/
 .tabs button:hover,
 .tabs button.active {
-  border-bottom: 2px #70c1cc solid;
-  color: #92DCE5;
+  border-bottom: 2px #584fd7 solid;
+  color: #584fd7;
 }
 
 .codimap-span {
@@ -242,13 +243,13 @@
   object-fit: cover; /* 이미지가 컨테이너를 채우도록 조정, 왜곡 방지 */
 }
 
-
 textarea {
   font-size: 15px;
   height: 50px;
   line-height: 1.5;
   resize: none; /* 크기 조정 비활성화 */
 }
+
 
 /* 설명 저장 버튼 */
 .save-btn-box {
@@ -277,6 +278,7 @@ textarea {
   background-color: transparent;
 }
 
+/*버튼 색상 수정 !!!!!!!!!!!!*/
 .des-save-button::before {
   content: "";
   position: absolute;
@@ -284,7 +286,8 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #92DCE5; /* 애니메이션 배경색 */
+  background-color: #584fd7;
+  /* background-color: #92dce5; 애니메이션 배경색 */
   transform: translateX(100%); /* 시작 상태: 왼쪽으로 이동 */
   transition: transform 0.5s ease; /* 애니메이션 시간과 속도 */
   z-index: -1; /* 텍스트보다 뒤에 배경이 오도록 설정 */
@@ -356,7 +359,7 @@ textarea {
 }
 
 .custom-option {
-  z-index: 2;
+  z-index: 1;
   background-color: white;
   border-radius: 5px;
 }
@@ -369,9 +372,12 @@ textarea {
   color: black;
   font-weight: 300;
 }
+
+/*색상 수정!!!!!*/
 .custom-option button:hover {
-  background-color: #92DCE5;
+  background-color: #f6f4ff;
 }
+
 .another-Slider {
   margin-top: 25px;
 }
