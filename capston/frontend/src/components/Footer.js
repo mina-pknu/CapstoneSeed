@@ -32,7 +32,7 @@ const Footer = ({ currentSection }) => {
       </button>
       <button
         className={
-          currentSection === "lookbook" ? "button selected-button" : "button"
+          currentSection === "virtualFit" ? "button selected-button" : "button"
         }
         onClick={() => navigate("/virtual-fit")}
       >
