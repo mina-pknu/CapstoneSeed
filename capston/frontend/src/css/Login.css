@@ -7,7 +7,7 @@
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .register-form,
@@ -27,7 +27,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   box-sizing: border-box;
   width: 100%;
   max-width: 600px;
@@ -61,7 +61,7 @@
 }
 
 .register-form input,
-.login-form input  {
+.login-form input {
   box-sizing: border-box;
   background: #eee;
   padding: 20px 16px;
@@ -73,13 +73,15 @@
   padding-left: 60px;
 }
 
-.login-form-title,.register-form-title {
- font-size: 48px;
- padding: 10px;
- margin-top: -20px;
+.login-form-title,
+.register-form-title {
+  font-size: 48px;
+  padding: 10px;
+  margin-top: -20px;
 }
 
-.login-button,.register-form-submit {
+.login-button,
+.register-form-submit {
   border-radius: 4px;
   border: none;
   outline: none;
@@ -140,8 +142,9 @@
   gap: 10px;
 }
 
-.register-form-submit:hover,.login-button:hover{
-  background-color:#eee
+.register-form-submit:hover,
+.login-button:hover {
+  background-color: #eee;
 }
 
 .confirm-message {
@@ -161,7 +164,7 @@
   transition: all 0.2s linear;
 }
 
-#mobile-login-btn:hover{
+#mobile-login-btn:hover {
   opacity: 1;
 }
 
@@ -171,7 +174,7 @@
   gap: 10px;
 }
 
-#mobile-register-btn{
+#mobile-register-btn {
   font-weight: bold;
   cursor: pointer;
 }
@@ -192,52 +195,69 @@
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink {
-  from, to { border-color: transparent; }
-  50% { border-color: black; }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: black;
+  }
 }
 
-#email-login-icon{
+
+/*!!!!!!!!!!!!!!색상 변경*/
+
+#email-login-icon {
   position: absolute;
   top: 37.5%;
   left: 18%;
-  color: #92DCE5;
+  color: #584fd7;
+  /* color: #92DCE5; */
   font-size: 25px;
 }
 
-#pass-login-icon{
+#pass-login-icon {
   position: absolute;
   top: 49.5%;
   left: 18%;
-  color: #92DCE5;
+  color: #584fd7;
+  /* color: #92DCE5; */
   font-size: 25px;
 }
 
-#user-icon{
+#user-icon {
   position: absolute;
   top: 28%;
   left: 18%;
-  color: #92DCE5;
+  /* color: #92DCE5; */
+  color: #584fd7;
   font-size: 25px;
 }
 
-#email-register-icon{
+#email-register-icon {
   position: absolute;
   top: 40.5%;
   left: 18%;
-  color: #92DCE5;
+  /* color: #92DCE5; */
+  color: #584fd7;
   font-size: 25px;
 }
 
-#pass-register-icon{
+#pass-register-icon {
   position: absolute;
   top: 52.5%;
   left: 18%;
-  color: #92DCE5;
+  /* color: #92DCE5; */
+  color: #584fd7;
   font-size: 25px;
 }
 
