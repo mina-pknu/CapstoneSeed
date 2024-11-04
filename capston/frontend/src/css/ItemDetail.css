@@ -306,11 +306,6 @@ textarea {
   margin-top: 100px;
 }
 
-/*z-index 수정 !!!!!!!!!!!!!!!!!!!!!*/
-.another-Slider{
-  z-index: -1;
-}
-
 .another-similar-styleType {
   font-size: 18px;
   margin-right: 10px;
@@ -334,13 +329,14 @@ textarea {
   background-color: white;
 }
 
+/*z-index 수정 !~!!!!!!!!!!!!!!!!!!*/
 .custom-select-wrapper {
   border: 2px #cccccc80 solid;
   border-radius: 5px;
   width: 200px;
   position: relative;
   display: inline-block;
-  z-index: 0;
+  z-index: 10;
 }
 
 .custom-select::after {
@@ -362,6 +358,7 @@ textarea {
   left: -1%;
   width: 200px;
   padding: 0px;
+  z-index: 20;
 }
 
 .custom-option {
@@ -431,6 +428,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1000;
 }
 
 /*수정 !!!!!!!!!!!!!!!!!!!!!!!!  아래도*/
@@ -441,6 +439,7 @@ li {
   max-width: 1000px;
   outline: none;
   margin-top: 50px;
+  z-index: 1001;
 }
 
 /* Slider 이미지 스타일 */
@@ -449,9 +448,7 @@ li {
   align-items: center;
   justify-content: center;
   z-index: 9998;
-
 }
-
 
 .virtualfit-slider-img {
   max-width: 100%;
@@ -472,12 +469,12 @@ li {
 
 .slick-prev:before,
 .slick-next:before {
-  content: '◀' !important;/* 왼쪽 화살표 모양 */ 
+  content: "◀" !important; /* 왼쪽 화살표 모양 */
   font-size: 30px !important;
 }
 
 .slick-next:before {
-  content: '▶' !important; /* 오른쪽 화살표 모양 */
+  content: "▶" !important; /* 오른쪽 화살표 모양 */
   font-size: 30px !important;
 }
 
@@ -490,8 +487,6 @@ li {
 .slick-next {
   right: -50px !important; /* 원하는 만큼 조정 */
 }
-
-
 
 /*반응형 웹*/
 /* 기본 스타일은 그대로 유지 */
