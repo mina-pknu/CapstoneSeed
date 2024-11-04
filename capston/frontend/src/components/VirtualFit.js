@@ -553,8 +553,8 @@ function VirtualFit() {
 
         {renderSavedImages()}
       </main>
-
-      <Footer currentSection="lookbook" />
+      {/*lookbook이 아니라 virtualFit 수정*/}
+      <Footer currentSection="virtualFit" />
     </div>
   );
 }
