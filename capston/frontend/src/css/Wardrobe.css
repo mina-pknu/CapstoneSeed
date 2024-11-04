@@ -140,6 +140,8 @@
   margin-bottom: 10px;
 }
 
+
+/* footer css*/
 .footer {
   position: fixed;
   bottom: 0;
@@ -151,6 +153,7 @@
   border-top: 1px solid #ccc;
 }
 
+/*버튼 눌러지는 효과 수정 !!!!!!!!!!!!*/
 .footer .button {
   width: 170px;
   height: 50px;
@@ -163,8 +166,15 @@
   color: black;
   font-size: 16px;
   line-height: 1.5;
+  font-weight: 300;
+  opacity: 0.6;
+}
+/*버튼 눌러지는 효과 수정 !!!!!!!!!!!!*/
+.footer .selected-button{
+  opacity: 1;
   font-weight: 500;
 }
+
 
 #ai-icon{
   display: flex;
