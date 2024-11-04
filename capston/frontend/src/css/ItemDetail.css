@@ -250,7 +250,6 @@ textarea {
   resize: none; /* 크기 조정 비활성화 */
 }
 
-
 /* 설명 저장 버튼 */
 .save-btn-box {
   display: flex;
@@ -302,8 +301,14 @@ textarea {
 }
 
 /* 또다른 유사한 상품 섹션 */
+
 .another-similar-section {
   margin-top: 100px;
+}
+
+/*z-index 수정 !!!!!!!!!!!!!!!!!!!!!*/
+.another-Slider{
+  z-index: -1;
 }
 
 .another-similar-styleType {
@@ -335,7 +340,7 @@ textarea {
   width: 200px;
   position: relative;
   display: inline-block;
-  z-index: 1;
+  z-index: 0;
 }
 
 .custom-select::after {
@@ -348,6 +353,7 @@ textarea {
   transform: translateY(-50%);
 }
 
+/*z-index 수정 !~!!!!!!!!!!!!!!!!!!*/
 .custom-dropdown {
   border: 2px #cccccc80 solid;
   border-radius: 5px;
@@ -427,13 +433,14 @@ li {
   justify-content: center;
 }
 
+/*패딩 수정*/
 .virtualfit-modal-content {
   background-color: white;
   border-radius: 5px;
   width: 100%;
   max-width: 900px;
   outline: none;
-  padding: 20px;
+  padding: 5px;
   margin-top: 50px;
 }
 
@@ -458,6 +465,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9998;
 }
 
 .virtualfit-slider-img {
