@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 // import axios from "axios";
 // import { saveAs } from "file-saver";
-import "../css/VirtualFit.css"; // 스타일 파일 추가
+import "../css/VirtualFit.css";
+
+import Footer from "./Footer"; /////////추가/////////////////////////
 
 function VirtualFit() {
   // 아이템 받아오기
@@ -30,15 +32,26 @@ function VirtualFit() {
   const [selectedOption, setSelectedOption] = useState("");
   const [imageUrls, setImageUrls] = useState([]); // 생성된 이미지 URL 저장
   const [currentImageSet, setCurrentImageSet] = useState(0); // 현재 표시할 이미지 세트 (0: 첫 2장, 1: 마지막 2장)
-
-  //////////////////////////////추가한 부분///////////////////////////////////////////
   const [savedImages, setSavedImages] = useState([]); // 저장된 이미지 URL을 저장
   const [isEditing, setIsEditing] = useState(false); // 편집 모드 관리
   const [selectedForDelete, setSelectedForDelete] = useState([]); // 삭제할 이미지 관리
 
+  ///////////////////////////////////////////추가////////////////////////////////////////////
+  const [isCollapsed, setIsCollapsed] = useState(true); //사이드바 접기 상태
+
+  const toggleSidebar = () => {
+    setIsCollapsed(!isCollapsed);
+  };
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+    setIsCollapsed(false); // 옵션 선택 시 하위 사이드바 열기
+  };
+  /////////////////////////////////////////////////////////////////////////////////////////
+
   // 선택된 키워드 상태
   const [selectedKeywords, setSelectedKeywords] = useState({
-    gender: "남성", // 디폴트 남성으로
+    gender: "남성", // 디폴트 남성
     style: style || "",
     color: getColorName(color) || "",
     clothing: [],
@@ -56,7 +69,6 @@ function VirtualFit() {
     });
   };
 
-  // subcategory 값이 있을 때 clothing에 자동 추가하는 useEffect
   useEffect(() => {
     if (subcategory) {
       setSelectedKeywords((prev) => ({
@@ -85,8 +97,8 @@ function VirtualFit() {
     { kr: "노란색", en: "Yellow", type: "color" },
     { kr: "초록색", en: "Green", type: "color" },
     { kr: "파란색", en: "Blue", type: "color" },
-    { kr: "베이지", en: "Blue", type: "color" },
-    { kr: "브라운", en: "Blue", type: "color" },
+    { kr: "베이지", en: "Beige", type: "color" }, ////////////////////////////////영어부분 중복 수정
+    { kr: "브라운", en: "Brown", type: "color" }, ////////////////////////////////영어부분 중복 수정
   ];
 
   const clothingTypes = {
@@ -147,21 +159,20 @@ function VirtualFit() {
       default:
         return null;
     }
-
+    ////////////////////////////////ul,li class로 변경///////////////////////////////////////////
     if (selectedOption === "clothing") {
       return (
         <div>
           {options.map(([category, items]) => (
             <div key={category}>
-              <h4>{category}</h4>
-              <ul>
+              <h4 classname="h4">{category}</h4>
+              <ul className="ul">
                 {items.map((item) => (
                   <li
                     key={item.en}
                     onClick={() => handleKeywordClick(item, category)}
+                    className="li"
                   >
-                    {" "}
-                    {/* category 값을 전달 */}
                     {item.kr}
                   </li>
                 ))}
@@ -172,9 +183,13 @@ function VirtualFit() {
       );
     } else {
       return (
-        <ul>
+        <ul className="ul">
           {options.map((item) => (
-            <li key={item.en} onClick={() => handleKeywordClick(item)}>
+            <li
+              key={item.en}
+              onClick={() => handleKeywordClick(item)}
+              className="li"
+            >
               {item.kr}
             </li>
           ))}
@@ -182,6 +197,7 @@ function VirtualFit() {
       );
     }
   };
+  ////////////////////////////////////////////////////////////////////////////////////////////
 
   const handleKeywordClick = (keyword, category) => {
     console.log("Item:", keyword.kr, "Category:", category); // category 값 확인용 log
@@ -223,8 +239,6 @@ function VirtualFit() {
     });
   };
 
-  //find 오류 수정
-  /////////////////////////////////////////////////////////////handleGenerateImage 함수 변경/////////////////////////////////////
   const handleGenerateImage = async () => {
     try {
       // 성별 변환
@@ -409,34 +423,36 @@ function VirtualFit() {
         <div className="sidebar">
           <h3
             id="h3"
-            onClick={() => setSelectedOption("style")}
+            onClick={() => handleOptionSelect("style")}
             className={selectedOption === "style" ? "selected-option" : ""}
           >
             스타일
           </h3>
           <h3
             id="h3"
-            onClick={() => setSelectedOption("color")}
+            onClick={() => handleOptionSelect("color")}
             className={selectedOption === "color" ? "selected-option" : ""}
           >
             색상
           </h3>
           <h3
             id="h3"
-            onClick={() => setSelectedOption("clothing")}
+            onClick={() => handleOptionSelect("clothing")}
             className={selectedOption === "clothing" ? "selected-option" : ""}
           >
             카테고리
           </h3>
           <h3
             id="h3"
-            onClick={() => setSelectedOption("gender")}
+            onClick={() => handleOptionSelect("gender")}
             className={selectedOption === "gender" ? "selected-option" : ""}
           >
             성별
           </h3>
         </div>
-        <div className="sub-sidebar">
+
+        {/*////////////////////////////////수정///////////////////////////////////////// */}
+        <div className={`sub-sidebar ${isCollapsed ? "collapsed" : ""}`}>
           <h2 id="h2">
             {selectedOption === "gender"
               ? "성별"
@@ -446,12 +462,26 @@ function VirtualFit() {
               ? "색상"
               : selectedOption === "clothing"
               ? "카테고리"
-              : "하위 옵션"}
+              : " "}
           </h2>
           {renderSubOptions()}
+          {/*////////////////////////////////서브 옵션 접기 버튼 추가///////////////////////////////////////// */}
+          <button className="collapse-button" onClick={toggleSidebar}>
+            {/* {isCollapsed ? "" : "<"} */}
+            <img
+              src="/arrow.png"
+              alt="toggle arrow"
+              className={
+                isCollapsed ? "arrow-icon-collapsed" : "arrow-icon-expanded"
+              }
+            />
+          </button>
         </div>
       </div>
-      <main id="main">
+      <main
+        id="main"
+        className={isCollapsed ? "main-collapsed" : "main-expanded"}
+      >
         {/* 프롬프트 부분 */}
         <div className="prompt-container">
           <p>
@@ -490,9 +520,9 @@ function VirtualFit() {
             >
               &#10094; {/* 왼쪽 화살표 */}
             </button>
-            {/* -----------------저장하기 버튼 추가-------------------------------------------------------------- */}
-            <button onClick={handleSaveImages} className="save-button">
-              저장하기
+            {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!저장 버튼 수정!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/}
+            <button onClick={handleSaveImages} className="button">
+              저장
             </button>
             <button
               onClick={handleNextImages}
@@ -504,10 +534,8 @@ function VirtualFit() {
           </div>
         </div>
 
-        {/* -----------------저장한 이미지 뜨는 부분 추가-------------------------------------------------------------- */}
         {/* 저장된 이미지 */}
         <hr />
-
         <div>
           <button onClick={toggleEditMode} className="edit-button">
             {isEditing ? "편집 완료" : "편집"}
@@ -525,6 +553,8 @@ function VirtualFit() {
 
         {renderSavedImages()}
       </main>
+
+      <Footer currentSection="lookbook" />
     </div>
   );
 }
