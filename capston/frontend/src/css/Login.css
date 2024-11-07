@@ -7,7 +7,9 @@
   overflow: hidden;
   box-sizing: border-box;
   position: relative;
-  font-family: "Montserrat", sans-serif;
+  /* font-family: "Montserrat", sans-serif; */
+
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 .register-form,
@@ -212,7 +214,6 @@
     border-color: black;
   }
 }
-
 
 /*!!!!!!!!!!!!!!색상 변경*/
 
